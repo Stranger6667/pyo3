@@ -850,7 +850,7 @@ fn abi3_without_interpreter() -> Result<()> {
 
 fn main() -> Result<()> {
     // If PYO3_NO_INTEPRETER is set with abi3, we can build PyO3 without calling Python (UNIX only).
-    if env::var_os("PYO3_NO_INTERPRETER").is_some()
+    if env::var_os("PYO3_NO_PYTHON").is_some()
         && env::var_os(format!("CARGO_FEATURE_ABI3_PY3{}", ABI3_MAX_MINOR)).is_some()
     {
         return abi3_without_interpreter();
